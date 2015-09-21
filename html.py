@@ -4,6 +4,7 @@
 import sys
 import requests
 from dataBase import Url, Webpage, Base, Comment_html, Comment_js, Comment_css
+import codecs
 
 class Html:
     def __init__(self, tarurl, session):
@@ -16,7 +17,7 @@ class Html:
         return headers
 
     def writeHtml(self, filename, content):
-        f = open(filename,'w')
+        f = codecs.open(filename, "w", "utf-8")
         f.write(content)
         f.close()
 
@@ -24,6 +25,7 @@ class Html:
     def header(self):
         head = """
         <head>
+        <meta charset="UTF-8" />
         <title>ComHunter</title>
         <meta name="viewport" content="width=device-width, initial-
         scale=1">

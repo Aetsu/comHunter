@@ -95,7 +95,7 @@ def main():
         print("Example: %s http://www.cni.es" % (sys.argv[0]))
         sys.exit(0)
 
-    path = 'session.' + time.ctime().replace(' ', '_')
+    path = 'session.' + time.strftime("%Y%m%d %H_%M_%S")
     dbname = 'session.' + path + '.db'
 
     if not os.path.exists(path):
